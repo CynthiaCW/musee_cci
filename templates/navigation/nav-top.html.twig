@@ -1,0 +1,52 @@
+<nav class="uk-navbar-container uk-margin" uk-navbar>
+    <div class="uk-navbar-center">
+
+        <div class="uk-navbar-center-left">
+            <div>
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active">
+                        <a href="#">Active</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <a class="uk-navbar-item uk-logo" href="{{ path("app_home") }}">MUSEE DE LA CCI</a>
+        <div class="uk-navbar-center-right"><div>
+            <ul class="uk-navbar-nav">
+                {% if is_granted("ROLE_MEMBRE") %}
+                    <li>
+                        <a href="#">BONJOUR, {{ app.user.nom }} {{ app.user.prenom }}</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-active">
+                                    <a href="#">MON RPOFIL</a>
+                                </li>
+                                <li>
+                                    <a href="#">tartanpion</a>
+                                </li>
+                                {% if is_granted("ROLE_ADMIN") %}
+                                <li>
+                                    <a href="{{ path("app_categorie_new") }}">ADMIN</a>
+                                </li>
+                                {% endif %}
+                                <li>
+                                    <a href="{{ path("app_logout") }}">DECONNECTER</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                {% else %}
+                    <li class="uk-active">
+                        <a href="{{ path("app_login") }}">Login</a>
+                    </li>
+                    <li class="uk-active">
+                        <a href="{{ path("app_register") }}">S'ENREGISTRER</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    </div>
+</nav>

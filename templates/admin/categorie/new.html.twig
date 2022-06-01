@@ -1,0 +1,11 @@
+{% extends 'navigation/admin/nav.html.twig' %}
+
+{% block title %}Insertion Categorie{% endblock %}
+
+{% block contents %}
+    <h1>Création d'une nouvelle catégorie</h1>
+
+    {{ include('admin/categorie/_form.html.twig') }}
+
+    <a href="{{ path('app_categorie_index') }}">back to list</a>
+{% endblock %}

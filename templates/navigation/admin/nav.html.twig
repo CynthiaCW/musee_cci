@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+ {{ parent() }}
+
+ <div class="admin-menu-block">
+    <a href="{{ path("app_categorie_index") }}" class="admin-menu-item"> catégorie </a>
+    <a href="{{ path("app_theme_index") }}" class="admin-menu-item"> Théme </a>
+    <a href="{{ path("app_oeuvre_admin_index") }}" class="admin-menu-item"> Oeuvre </a>
+    <a href="" class="admin-menu-item"> Moderation Commentaire </a>
+ </div>
+{% endblock %}

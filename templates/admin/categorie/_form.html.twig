@@ -1,0 +1,23 @@
+{{ form_start(form) }}
+    <fieldset class="uk-fieldset">
+        <div class="my-custom-class-for-errors">
+            {{ form_errors(form) }}
+        </div>
+
+        <div class="row">
+            <div class="">
+            Nom de la categorie
+            </div>
+            <div class="col">
+                {{ form_widget(form.nom) }}
+            </div>
+            <div>
+                Description de la catégorie
+            </div>
+            <div class="uk-margin">
+                {{ form_widget(form.description) }}
+            </div>
+        </div>
+        <button class="btn">{{ button_label|default('Save') }}</button>
+    </fieldset>
+{{ form_end(form) }}
